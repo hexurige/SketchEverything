@@ -23,9 +23,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"picture/background.jpg"]];
-    UIImage *initImage = [UIImage imageNamed:@"picture/SketchEveryting.jpg"];
+    //self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"picture/background.jpg"]];
+    UIImage *initImage = [UIImage imageNamed:@"picture/Pencil-icon.png"];
     self.imageView.image = initImage;
+    beginImage = [CIImage imageWithCGImage:initImage.CGImage];
+    self.imageView.contentMode = UIViewContentModeScaleAspectFit;
     
     
     //------------------bar button---------------------
@@ -88,9 +90,6 @@
     
     [self presentViewController:controller animated:YES completion:nil];
 
-}
-
-- (IBAction)dfsafasd:(UIButton *)sender {
 }
 
 - (IBAction)sketchPhoto:(UIButton *)sender {
